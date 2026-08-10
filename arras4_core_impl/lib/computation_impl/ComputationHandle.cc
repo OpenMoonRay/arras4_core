@@ -77,7 +77,7 @@ ComputationHandle::ComputationHandle(const std::string& dsoName,
 {
     typedef api::Computation* (*CREATE_FP)(api::ComputationEnvironment*);
 
-    mDso = dlopen(dsoName.c_str(), RTLD_NOW | RTLD_GLOBAL);
+    mDso = dlopen(dsoName.c_str(), RTLD_LAZY | RTLD_GLOBAL);
     if (!mDso) {
         std::string msg("Failed to load computation dso '" +
                         dsoName + "': " + safeDlerror());
