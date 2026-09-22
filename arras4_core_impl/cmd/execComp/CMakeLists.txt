@@ -14,9 +14,6 @@ target_sources(${CmdName}
 
 if(IsUnixPlatform)
     set(PlatformSpecificLibs pthread)
-    if(IsLinuxPlatform)
-        list(APPEND PlatformSpecificLibs Libatomic::Libatomic)
-    endif()
 endif()
 
 target_link_libraries(${CmdName}
@@ -33,6 +30,9 @@ target_link_libraries(${CmdName}
         Boost::filesystem
         ${PlatformSpecificLibs}
 )
+
+omr_target_link_atomic(${CmdName} PRIVATE)
+
 # prevent use of crash reporter since it isn't yet supported
 target_compile_definitions(${CmdName} PRIVATE DONT_USE_CRASH_REPORTER)
 
