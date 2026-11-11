@@ -23,7 +23,6 @@ endif()
 if (IsUnixPlatform)
     find_package(Libuuid REQUIRED)
     find_package(Libcurl REQUIRED)
-    find_package(Libatomic REQUIRED)
 endif()
 
 find_dependency(Microhttpd)

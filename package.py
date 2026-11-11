@@ -11,7 +11,7 @@ def version():
     """
     Increment the build in the version.
     """
-    _version = '4.10.3'
+    _version = '4.10.4'
     from rezbuild import earlybind
     return earlybind.version(this, _version)
 
@@ -43,14 +43,14 @@ variants = [
     ],
     [   # variant 4
         'os-rocky-9',
-        'refplat-vfx2022.0'
+        'refplat-vfx2026.0'
     ],
 ]
 
 private_build_requires = [
-    'cmake_modules-1.1',
+    'cmake_modules-2.0',
     'cppunit',
-    'gcc-6.3.x|9.3.x|11.x'
+    'gcc-11.x|14.2.x'
 ]
 
 def commands():
@@ -71,7 +71,7 @@ def requires():
         'uuid-1.0.0',
         'boost',
         'curl_no_ldap-7.49.1.x.2',
-        'jsoncpp-1.9.5.x',
+        'jsoncpp-1.9',
         'libmicrohttpd-0.9.71.x.1',
         'breakpad-1499'
     ]

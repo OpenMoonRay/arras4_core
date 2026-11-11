@@ -45,9 +45,6 @@ endif()
 if (IsUnixPlatform)
     find_package(Libuuid REQUIRED)
     find_package(Libcurl REQUIRED)
-    if (IsLinuxPlatform)
-        find_package(Libatomic REQUIRED)
-    endif()
 endif()
 
 find_package(Microhttpd REQUIRED)
@@ -149,4 +146,3 @@ install(
     DESTINATION
         ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}-${PROJECT_VERSION}
 )
-
